@@ -4,7 +4,7 @@
 	<modelVersion>4.0.0</modelVersion>
 
 	<groupId>com.ness.services</groupId>
-	<artifactId>ness-dss-gatewayservice</artifactId>
+	<artifactId>ness-fse-gatewayservice</artifactId>
 	<version>0.0.1</version>
 	<packaging>jar</packaging>
 
