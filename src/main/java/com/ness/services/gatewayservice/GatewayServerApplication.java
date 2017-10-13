@@ -29,21 +29,35 @@ public class GatewayServerApplication
 
     @Bean
     public CorsFilter corsFilter() {
-        final UrlBasedCorsConfigurationSource source = new UrlBasedCorsConfigurationSource();
+//        final UrlBasedCorsConfigurationSource source = new UrlBasedCorsConfigurationSource();
+//        final CorsConfiguration config = new CorsConfiguration();
+//        config.setAllowCredentials(true);
+//        System.out.println("ORIGINS = " + gatewayServerConfiguration.getOrigins());
+//        for(String o : gatewayServerConfiguration.getOrigins())
+//        {
+//            System.out.println("ORIGIN = " + o);
+//            config.addAllowedOrigin(o);
+//        }
+//        for(String m : gatewayServerConfiguration.getMethods())
+//        {
+//        	System.out.println("METHOD = " + m);
+//        	config.addAllowedMethod(m);
+//        }
+//        config.addAllowedHeader("*");
+//        source.registerCorsConfiguration("/**", config);
+//        return new CorsFilter(source);
+    	final UrlBasedCorsConfigurationSource source = new UrlBasedCorsConfigurationSource();
         final CorsConfiguration config = new CorsConfiguration();
         config.setAllowCredentials(true);
-        System.out.println("ORIGINS = " + gatewayServerConfiguration.getOrigins());
-        for(String o : gatewayServerConfiguration.getOrigins())
-        {
-            System.out.println("ORIGIN = " + o);
-            config.addAllowedOrigin(o);
-        }
-        for(String m : gatewayServerConfiguration.getMethods())
-        {
-        	System.out.println("METHOD = " + m);
-        	config.addAllowedMethod(m);
-        }
+        config.addAllowedOrigin("*");
         config.addAllowedHeader("*");
+        config.addAllowedMethod("OPTIONS");
+        config.addAllowedMethod("HEAD");
+        config.addAllowedMethod("GET");
+        config.addAllowedMethod("PUT");
+        config.addAllowedMethod("POST");
+        config.addAllowedMethod("DELETE");
+        config.addAllowedMethod("PATCH");
         source.registerCorsConfiguration("/**", config);
         return new CorsFilter(source);
     }

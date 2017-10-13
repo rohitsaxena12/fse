@@ -15,20 +15,20 @@ public class GatewayServerConfiguration
     @Value("${gatewayserver.cors.allow-credentials:true}")
     private boolean allowCredentials;
     
-    @Value("${jwt.secret}")
-    private String jwtkey;
+//    @Value("${jwt.secret}")
+//    private String jwtkey;
 
     @Value("${gatewayserver.cors.allow-header:*}")
     private String header;
     
     
-	public String getJwtkey() {
-		return jwtkey;
-	}
-
-	public void setJwtkey(String jwtkey) {
-		this.jwtkey = jwtkey;
-	}
+//	public String getJwtkey() {
+//		return jwtkey;
+//	}
+//
+//	public void setJwtkey(String jwtkey) {
+//		this.jwtkey = jwtkey;
+//	}
 
 
     public String[] getOrigins()
